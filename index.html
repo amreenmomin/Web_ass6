@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assign_6 Students XML Reader</title>
+    <style>
+        table,
+      td,
+      th {
+        padding: 10px;
+        border: 2px solid white;
+        border-radius: 5px;
+        background-color:darkmagenta;
+        text-align: center;
+        color: white;
+      }
+      </style>
+    <script>
+        function loadXML() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    parseXML(this);
+                }
+            };
+            xhttp.open("GET", "students.xml", true);
+            xhttp.send();
+        }
+        
+        function parseXML(xml) {
+            var xmlDoc = xml.responseXML;
+            var table = "<table><tr><th>ID</th><th>Name</th><th>Date of Birth</th><th>State</th><th>Mobile no.</th></tr>";
+            var employees = xmlDoc.getElementsByTagName("Employee");
+            for (var i = 0; i < employees.length; i++) {
+                var id = employees[i].getElementsByTagName("id")[0].childNodes[0].nodeValue;
+                var name = employees[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+                var dob = employees[i].getElementsByTagName("dob")[0].childNodes[0].nodeValue;
+                var startDate = employees[i].getElementsByTagName("start-date")[0].childNodes[0].nodeValue;
+                var salary = employees[i].getElementsByTagName("salary")[0].childNodes[0].nodeValue;
+                table += "<tr><td>" + id + "</td><td>" + name + "</td><td>" + dob + "</td><td>" + startDate + "</td><td>" + salary + "</td></tr>";
+            }
+            table += "</table>";
+            document.getElementById("employeesTable").innerHTML = table;
+        }
+    </script>
+</head>
+<body style="text-align: center;">
+    <button style="background:#3630a3;color:white;" onclick="loadXML()">Load XML</button>
+    <div style="padding-left: 480px;padding-top: 70px;" id="employeesTable"></div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Employees>
+    <Employee>
+        <id>1</id>
+        <name>Rahul Shah</name>
+        <dob>1990-05-15</dob>
+        <start-date>Maharashtra</start-date>
+        <salary>8652147931</salary>
+    </Employee>
+    <Employee>
+        <id>2</id>
+        <name>Aayush Singh</name>
+        <dob>1988-12-10</dob>
+        <start-date>Gujrat</start-date>
+        <salary>9640231780</salary>
+    </Employee>
+    <Employee>
+        <id>3</id>
+        <name>Rohit Sharma</name>
+        <dob>1992-08-22</dob>
+        <start-date>Rajasthan</start-date>
+        <salary>7621034853</salary>
+    </Employee>
+    <Employee>
+        <id>3</id>
+        <name>Rohu Shami</name>
+        <dob>1992-08-22</dob>
+        <start-date>Goa</start-date>
+        <salary>9953201173</salary>
+    </Employee>
+    <Employee>
+        <id>3</id>
+        <name>Aaru Jain</name>
+        <dob>1992-08-22</dob>
+        <start-date>Indore</start-date>
+        <salary>7662410038</salary>
+    </Employee>
+</Employees>
